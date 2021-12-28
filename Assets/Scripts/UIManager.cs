@@ -35,13 +35,12 @@ public class UIManager : MonoBehaviour
 
         Instance = this;
         LoadHighScores();
-        // DontDestroyOnLoad(gameObject);
     }
 
     public void SaveHighScores(ScoreNamePair newScore)
     {
         Leaderboard data = leaderboard;
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (i < data.LeaderboardData.Count)
             {
@@ -49,7 +48,7 @@ public class UIManager : MonoBehaviour
                 {
                     data.LeaderboardData.Insert(i, newScore);
                     if (data.LeaderboardData.Count > 5)
-                        data.LeaderboardData.RemoveAt(-1);
+                        data.LeaderboardData.RemoveAt(data.LeaderboardData.Count - 1);
                     break;
                 }
             }
@@ -63,10 +62,6 @@ public class UIManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
 
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-    }
-
-    private void SaveScores(Leaderboard data, ScoreNamePair newScore)
-    {
     }
 
     public void LoadHighScores()

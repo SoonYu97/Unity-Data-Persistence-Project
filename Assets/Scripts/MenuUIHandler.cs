@@ -10,16 +10,17 @@ using UnityEngine.SceneManagement;
 [DefaultExecutionOrder(1000)]
 public class MenuUIHandler : MonoBehaviour
 {
-    
-    private void Start()
-    {
-    }
 
     public void StartNew()
     {
-        if(UIManager.Instance.NameInput != null)
+        if (UIManager.Instance.NameInput != null)
             UIManager.Instance.CurrentPlayerName = UIManager.Instance.NameInput.text;
         SceneManager.LoadScene(1);
+    }
+
+    public void HighScore()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void Exit()

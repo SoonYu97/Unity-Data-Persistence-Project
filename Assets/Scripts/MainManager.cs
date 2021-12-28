@@ -45,10 +45,6 @@ public class MainManager : MonoBehaviour
             if (UIManager.Instance.NameInput.text != "")
             CurrentPlayerName = UIManager.Instance.NameInput.text;
         }
-        else
-        {
-            CurrentPlayerName = UIManager.Instance.CurrentPlayerName;
-        }
 
         if (UIManager.Instance.leaderboard.LeaderboardData.Count > 0)
         {
