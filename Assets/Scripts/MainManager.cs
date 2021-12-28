@@ -10,9 +10,12 @@ public class MainManager : MonoBehaviour
     public int LineCount = 6;
     public Rigidbody Ball;
 
+    public string CurrentPlayerName = "Anonymous";
     public Text ScoreText;
+    public Text BestScoreText;
     public GameObject GameOverText;
-    
+    public UIManager.HighScore BestScore;
+
     private bool m_Started = false;
     private int m_Points;
     
@@ -36,6 +39,12 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+
+        if(UIManager.Instance.NameInput.text != "")
+            CurrentPlayerName = UIManager.Instance.NameInput.text;
+        BestScore = UIManager.Instance.leaderboard[0];
+
+        BestScoreText.text = "Best Score: " + BestScore.name + ": " + BestScore.score;
     }
 
     private void Update()
