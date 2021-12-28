@@ -17,6 +17,8 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartNew()
     {
+        if(UIManager.Instance.NameInput != null)
+            UIManager.Instance.CurrentPlayerName = UIManager.Instance.NameInput.text;
         SceneManager.LoadScene(1);
     }
 

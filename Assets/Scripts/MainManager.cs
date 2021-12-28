@@ -14,7 +14,7 @@ public class MainManager : MonoBehaviour
     public Text ScoreText;
     public Text BestScoreText;
     public GameObject GameOverText;
-    public UIManager.HighScore BestScore;
+    public UIManager.ScoreNamePair BestScore;
 
     private bool m_Started = false;
     private int m_Points;
@@ -40,11 +40,21 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        if(UIManager.Instance.NameInput.text != "")
+        if (UIManager.Instance.NameInput != null)
+        { 
+            if (UIManager.Instance.NameInput.text != "")
             CurrentPlayerName = UIManager.Instance.NameInput.text;
-        BestScore = UIManager.Instance.leaderboard[0];
+        }
+        else
+        {
+            CurrentPlayerName = UIManager.Instance.CurrentPlayerName;
+        }
 
-        BestScoreText.text = "Best Score: " + BestScore.name + ": " + BestScore.score;
+        if (UIManager.Instance.leaderboard.LeaderboardData.Count > 0)
+        {
+            BestScore = UIManager.Instance.leaderboard.LeaderboardData[0];
+            BestScoreText.text = "Best Score: " + BestScore.name + ": " + BestScore.score;
+        }
     }
 
     private void Update()
@@ -82,6 +92,8 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        UIManager.ScoreNamePair CurrentScore = new UIManager.ScoreNamePair { name = CurrentPlayerName, score = m_Points };
+        UIManager.Instance.SaveHighScores(CurrentScore);
         m_GameOver = true;
         GameOverText.SetActive(true);
     }

@@ -353,7 +353,7 @@ RectTransform:
   - {fileID: 1701301599}
   - {fileID: 1498463630}
   - {fileID: 164568095}
-  - {fileID: 409927603}
+  - {fileID: 346456576}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -686,6 +686,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameInput: {fileID: 786900775}
+  CurrentPlayerName: 
+  leaderboard:
+    LeaderboardData: []
 --- !u!4 &346456576
 Transform:
   m_ObjectHideFlags: 0
@@ -693,11 +696,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346456574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 458.1266, y: 250.79753, z: -36.463913}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -92.37341, y: -8.702469, z: -36.463913}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 409927603}
+  m_Father: {fileID: 100834085}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &409927602
@@ -723,18 +727,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409927602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 36.463913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1349343083}
   - {fileID: 786900774}
-  m_Father: {fileID: 100834085}
-  m_RootOrder: 4
+  m_Father: {fileID: 346456576}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 45}
+  m_AnchoredPosition: {x: 92.37341, y: 53.702454}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &473475320
